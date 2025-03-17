@@ -1,0 +1,193 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: lightgray;
+
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    gap: 100px;
+}
+.back-vid{
+    position: fixed;
+    right: 0;
+    border: 0;
+    /* To position the vedio in the bottom corner and z- index = -1 to  ensure that the vedion stays behind all the content*/
+    z-index: -1;
+    /* To give an blending effect with rest of the page*/
+    mix-blend-mode: overlay;
+}
+@media (max-aspect-ratio: 16/9){
+    .back-vid{
+        width: audio;
+        height: 100%;
+    }
+    
+} 
+@media (min-aspect-ratio: 16/9){
+    .back-vid{
+        width: 100%;
+        height: auto;
+    }
+}
+header{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    justify-content: space-between;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.123);
+    backdrop-filter: blur(10px);
+    padding: 0 30px;
+    box-shadow: 0 0 15px #72a1de68;
+    z-index: 999;
+}
+.left{
+    display: flex;
+    align-items: center;
+}
+.left img{
+    width: 80px;
+    margin: 0 15px;
+}
+header ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    padding: 15px 15px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 69, 0.3);
+    backdrop-filter:   blur(10px);
+    box-shadow: 0 0 10px #727fde65;
+
+}
+header ul li{
+    list-style: none;
+}
+header ul a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    margin: 0 10px;
+}
+.box-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+}
+.box-icons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #727fde;
+    text-decoration: none;
+    color: lightgray;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.box-icons a:hover{
+    background-color: #727fde;
+    color: black;
+    box-shadow: 0 0 15px #727fde6f;
+}
+.blackhole-box{
+    position:absolute;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+    mix-blend-mode: lighten;
+}
+.blackhole-box video{
+    width: 100%;
+    margin-top: -23.5%;
+
+}
+.hero{
+    position: relative;
+    display: flex;
+    /* Set height as 100vh and do align items this will take them to center. Good technique */
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+}
+.hero-info{
+    position: absolute;
+    left: 5%;
+}
+.hero-info .hero-info-title
+{
+    color: #727fde;
+    padding: 8px 5px;
+    border: 1px solid #727fde77;
+    width: 240px;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #727fde;
+    border-radius: 50px;
+}
+.hero-info h1{
+    font-size: 60px;
+    max-width: 600px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.hero-info p{
+    max-width: 550px;
+    line-height: 25px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+.hero-info button{
+    color: white;
+    padding: 15px 35px;
+    border-radius: 10px;
+    border: 1px solid #727fde8e;
+    background: #2200493d;
+    box-shadow: 0 0 5px #727fde;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.hero-info button:hover{
+    background: #727fde;
+    color: black;
+    box-shadow: 0 0 15px #727fde;
+}
+/* Gradient Class */
+.gradient{
+    background: linear-gradient(to right, #008baa,rgb(215, 71, 203),rgb(160, 13, 214), rgb(23, 23, 159), rgb(96, 96, 250),#008baa);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: anime-gradient 2.5s linear infinite;
+}
+@keyframes anime-gradient{
+    to{
+        background-position: 200%;
+    }
+
+}
+.hero-vid-box
+{
+    position: absolute;
+    right: 3%;
+}
+.hero-vid-box video{
+    height: 900px;
+    mix-blend-mode: difference;
+}
