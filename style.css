@@ -30,7 +30,7 @@ html{
 }
 @media (max-aspect-ratio: 16/9){
     .back-vid{
-        width: audio;
+        width: auto;
         height: 100%;
     }
     
