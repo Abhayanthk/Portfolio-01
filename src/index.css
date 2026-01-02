@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-outfit: 'Outfit', sans-serif;
+  
+  --color-primary: #727fde;
+  --color-glass-bg: rgba(16, 20, 60, 0.4);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-dark-overlay: #001f7c38;
+  
+  --animate-scroll: scroll 30s linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translateX(calc(-100% / 3));
+    }
+  }
+}
+
+/* Base styles and Utilities */
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-outfit);
+    background-color: #000000;
+    color: #d1d5db;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@utility glass {
+  @apply bg-[rgba(16,20,60,0.4)] backdrop-blur-[15px] border border-[rgba(255,255,255,0.08)] shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+}
+
+@utility glass-header {
+  @apply bg-[rgba(16,20,60,0.3)] backdrop-blur-[15px] border-b border-[rgba(255,255,255,0.05)];
+}
+
+@utility gradient-text {
+  background: linear-gradient(to right, #008baa,rgb(215, 71, 203),rgb(160, 13, 214), rgb(23, 23, 159), rgb(96, 96, 250),#008baa);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: var(--animate-anime-gradient);
+}
+
+@utility mask-gradient-to-r {
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+@utility mask-gradient {
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+@utility paused {
+  animation-play-state: paused;
+}
