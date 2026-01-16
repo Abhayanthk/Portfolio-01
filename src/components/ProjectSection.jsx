@@ -1,5 +1,5 @@
 import React from "react";
-
+// import Link
 const ProjectSection = () => {
   const projects = [
     {
@@ -11,17 +11,19 @@ const ProjectSection = () => {
     },
     {
       id: 2,
-      title: "Animated Gaming Website",
-      desc: "Immersive gaming platform featuring high-performance animations and 3D effects.",
-      video: "/videos/project1.mp4",
-      highlight: "Gaming",
+      title: "Achron",
+      desc: "AI powered productivity tool",
+      video: "/videos/Achron.mp4",
+      website: "https://achron.vercel.app/",
+      highlight: "Achron",
     },
     {
       id: 3,
-      title: "E-Commerce Solution",
-      desc: "Full-stack e-commerce app with secure payment processing and admin dashboard.",
-      video: "/videos/project1.mp4", // Using project1 as per legacy, but could be project3 if available
-      highlight: "Commerce",
+      title: "Gocart",
+      desc: "Multi-Vendor Full Stack E-Commerce App with admin and vendor panel",
+      video: "/videos/Gocart.mp4", // Using project1 as per legacy, but could be project3 if available
+      website: "https://gocart-sage-nu.vercel.app/",
+      highlight: "Gocart",
     },
   ];
 
@@ -49,6 +51,7 @@ const ProjectSection = () => {
                 muted
                 loop
                 playsInline
+                onClick={() => window.open(project.website, "_blank")}
               ></video>
             </div>
 
@@ -62,9 +65,12 @@ const ProjectSection = () => {
               <p className="text-gray-400 leading-relaxed mb-8 max-w-[400px]">
                 {project.desc}
               </p>
-              <button className="text-white px-6 py-2 rounded-xl border border-[#727fde8e] bg-[#2200493d] shadow-[0_0_5px_#727fde] hover:bg-primary hover:text-black hover:shadow-[0_0_15px_#727fde] transition duration-300 flex items-center gap-2 cursor-pointer">
+              <a
+                href={project.website}
+                className="text-white px-6 py-2 rounded-xl border border-[#727fde8e] bg-[#2200493d] shadow-[0_0_5px_#727fde] hover:bg-primary hover:text-black hover:shadow-[0_0_15px_#727fde] transition duration-300 flex items-center gap-2 cursor-pointer"
+              >
                 <i className="bx bx-link-external"></i> Website
-              </button>
+              </a>
             </div>
           </div>
         ))}
