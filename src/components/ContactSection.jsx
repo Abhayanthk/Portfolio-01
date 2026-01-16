@@ -1,10 +1,40 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import {
+  EMAILJS_SERVICE_ID,
+  EMAILJS_TEMPLATE_ID,
+  EMAILJS_PUBLIC_KEY,
+} from "../config";
 
 const ContactSection = () => {
+  const form = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        form.current,
+        EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message sent successfully!");
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed to send message, please try again.");
+        }
+      );
+  };
   return (
     <section
       id="contact"
-      className="relative flex flex-col lg:flex-row items-center justify-center w-[80%] min-h-screen gap-10 lg:gap-[10%] z-10 my-20 lg:my-0"
+      className="flex flex-col lg:flex-row items-center justify-center w-[80%] min-h-screen my-20 z-10 relative gap-20"
     >
       <h1 className="text-4xl font-bold text-white absolute top-10 lg:top-[10%] lg:left-[40%]">
         Let's Talk
@@ -12,47 +42,26 @@ const ContactSection = () => {
 
       <div className="flex flex-col gap-6 mt-20 lg:mt-0">
         <a
-          href="#"
-          className="text-gray-300 text-xl flex items-center hover:text-primary transition group"
-        >
-          <i className="bx bxs-phone-call text-primary text-3xl mr-4 group-hover:scale-110 transition"></i>
-          +91 1122334455
-        </a>
-        <a
-          href="#"
+          href="https://www.linkedin.com/in/abhayanth-k-675905323/"
           className="text-gray-300 text-xl flex items-center hover:text-primary transition group"
         >
           <i className="bx bxl-linkedin-square text-primary text-3xl mr-4 group-hover:scale-110 transition"></i>
           Connect on LinkedIn
         </a>
         <a
-          href="#"
+          href="mailto:abhayanth2006@gmail.com"
           className="text-gray-300 text-xl flex items-center hover:text-primary transition group"
         >
           <i className="bx bxl-gmail text-primary text-3xl mr-4 group-hover:scale-110 transition"></i>
-          email@example.com
+          abhayanth2006@gmail.com
         </a>
-
-        <div className="flex gap-4 mt-10">
-          <a
-            href="#"
-            className="text-3xl text-gray-400 hover:text-primary transition"
-          >
-            <i className="bx bxl-github"></i>
-          </a>
-          <a
-            href="#"
-            className="text-3xl text-gray-400 hover:text-primary transition"
-          >
-            <i className="bx bxl-twitter"></i>
-          </a>
-          <a
-            href="#"
-            className="text-3xl text-gray-400 hover:text-primary transition"
-          >
-            <i className="bx bxl-instagram"></i>
-          </a>
-        </div>
+        <a
+          href="https://github.com/Abhayanthk"
+          className="text-gray-300 text-xl flex items-center hover:text-primary transition group"
+        >
+          <i className="bx bxl-github text-primary text-3xl mr-4 group-hover:scale-110 transition"></i>
+          Check out my GitHub
+        </a>
       </div>
 
       <div className="w-full lg:w-1/2 max-w-[500px] glass p-10 rounded-2xl flex flex-col items-start">
@@ -60,33 +69,44 @@ const ContactSection = () => {
           Have a project in mind or just want to say hi? Drop me a message below
           and I'll get back to you as soon as possible.
         </p>
-        <form className="w-full flex flex-col gap-4">
+        <form
+          ref={form}
+          className="w-full flex flex-col gap-4"
+          onSubmit={handleSubmit}
+        >
           <div className="flex flex-col w-full">
             <label className="text-white text-sm mb-2">Name</label>
             <input
               type="text"
-              className="w-full p-4 bg-black/20 border border-white/10 rounded-lg text-white outline-none focus:border-primary focus:bg-black/40 transition duration-300"
+              name="user_name"
               placeholder="Your Name"
+              className="px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.2)] text-white focus:outline-none focus:border-primary transition"
+              required
             />
           </div>
           <div className="flex flex-col w-full">
             <label className="text-white text-sm mb-2">Email</label>
             <input
               type="email"
-              className="w-full p-4 bg-black/20 border border-white/10 rounded-lg text-white outline-none focus:border-primary focus:bg-black/40 transition duration-300"
-              placeholder="your@email.com"
+              name="user_email"
+              placeholder="Your Email"
+              className="px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.2)] text-white focus:outline-none focus:border-primary transition"
+              required
             />
           </div>
           <div className="flex flex-col w-full">
             <label className="text-white text-sm mb-2">Message</label>
             <textarea
-              className="w-full h-[120px] p-4 bg-black/20 border border-white/10 rounded-lg text-white outline-none focus:border-primary focus:bg-black/40 transition duration-300 resize-none"
-              placeholder="Write your message..."
+              name="message"
+              placeholder="Your Message"
+              rows="5"
+              className="px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.2)] text-white focus:outline-none focus:border-primary transition resize-none"
+              required
             ></textarea>
           </div>
           <button
             type="submit"
-            className="mt-4 px-8 py-3 bg-gradient-to-r from-[#727fde] to-[#5a66c5] text-white font-bold rounded-lg shadow-lg hover:-translate-y-1 hover:shadow-primary/40 transition duration-300 self-start"
+            className="mt-4 bg-primary text-black font-bold py-3 rounded-xl hover:bg-white transition cursor-pointer"
           >
             Send Message
           </button>

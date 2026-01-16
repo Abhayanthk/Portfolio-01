@@ -78,13 +78,15 @@ const InfoSection = () => {
               Active problem solver on Codeforces and LeetCode. Enhancing
               algorithmic thinking and optimization skills.
             </p>
-            <div className="font-bold text-lg text-primary mb-1">
+            <div className="hidden md:block font-bold text-lg text-primary mb-1">
               Specialist
             </div>
-            <div className="text-sm text-gray-400">
+            <div className="hidden xl:block text-sm text-gray-400">
               Codeforces Max Rating: 1485
             </div>
-            <div className="text-sm text-gray-400">Problems Solved: 1300+</div>
+            <div className="hidden xl:block text-sm text-gray-400">
+              Problems Solved: 1300+
+            </div>
           </div>
           <a
             href="https://codeforces.com/profile/Harly24"
