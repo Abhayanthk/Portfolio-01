@@ -4,13 +4,6 @@ const ProjectSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Modern Portfolio Website",
-      desc: "Responsive portfolio with glassmorphism design and interactive elements.",
-      video: "/videos/project2.mp4",
-      highlight: "Portfolio",
-    },
-    {
-      id: 2,
       title: "Achron",
       desc: "AI powered productivity tool",
       video: "/videos/Achron.mp4",
@@ -18,12 +11,20 @@ const ProjectSection = () => {
       highlight: "Achron",
     },
     {
-      id: 3,
+      id: 2,
       title: "Gocart",
       desc: "Multi-Vendor Full Stack E-Commerce App with admin and vendor panel",
       video: "/videos/Gocart.mp4", // Using project1 as per legacy, but could be project3 if available
       website: "https://gocart-sage-nu.vercel.app/",
       highlight: "Gocart",
+    },
+    {
+      id: 3,
+      title: "TrendSeer",
+      desc: "Real estate website featuring mortgage calculator",
+      video: "/videos/TrendSeer.mp4",
+      highlight: "TrendSeer",
+      website: "https://trend-seer-kyqh.vercel.app/",
     },
   ];
 
