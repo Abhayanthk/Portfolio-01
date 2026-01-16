@@ -81,9 +81,9 @@ const InfoSection = () => {
             <div className="hidden md:block font-bold text-lg text-primary mb-1">
               Specialist
             </div>
-            <div className="hidden xl:block text-sm text-gray-400">
+            {/* <div className="hidden xl:block text-sm text-gray-400">
               Codeforces Max Rating: 1485
-            </div>
+            </div> */}
             <div className="hidden xl:block text-sm text-gray-400">
               Problems Solved: 1300+
             </div>

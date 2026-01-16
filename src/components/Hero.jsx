@@ -21,7 +21,7 @@ const Hero = () => {
           I craft high-performance web solutions with a focus on seamless user
           experiences and robust backend architecture.
         </p>
-        <div className="flex gap-4">
+        <div className="flex md:flex-row flex-col gap-4  items-start">
           <a href="#contact">
             <button className="text-white px-9 py-4 rounded-xl border border-[#727fde8e] bg-[#2200493d] shadow-[0_0_5px_#727fde] hover:bg-primary hover:text-black hover:shadow-[0_0_15px_#727fde] transition duration-300 cursor-pointer">
               Contact Me
