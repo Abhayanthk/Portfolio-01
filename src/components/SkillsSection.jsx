@@ -99,12 +99,12 @@ const SkillsSection = () => {
 
       {/* Persona Text */}
       <div className="absolute top-[20%] left-[5%] md:left-[10%] flex flex-col items-start max-w-[300px]">
-        <h1 className="text-5xl font-bold text-white mb-2 tracking-wide drop-shadow-lg">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-wide drop-shadow-lg">
           Problem
           <br />
           Solver
         </h1>
-        <p className="text-gray-400 leading-relaxed font-light">
+        <p className="hidden md:block text-gray-400 leading-relaxed font-light">
           I approach every challenge with a logical mindset, breaking down
           complex problems into manageable solutions using algorithms and data
           structures.
@@ -112,12 +112,12 @@ const SkillsSection = () => {
       </div>
 
       <div className="absolute top-[20%] right-[5%] md:right-[10%] flex flex-col items-end text-end max-w-[300px]">
-        <h1 className="text-5xl font-bold text-white mb-2 tracking-wide drop-shadow-lg">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-wide drop-shadow-lg">
           Software
           <br />
           Engineer
         </h1>
-        <p className="text-gray-400 leading-relaxed font-light">
+        <p className="hidden md:block text-gray-400 leading-relaxed font-light">
           Building systems that matter. From architecture to deployment, I
           ensure every line of code contributes to a reliable and scalable
           product.

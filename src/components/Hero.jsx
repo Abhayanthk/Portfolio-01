@@ -13,7 +13,7 @@ const Hero = () => {
         <p className="text-xl font-medium text-gray-300 mb-2 pl-1">
           Hi, I am <span className="text-white font-bold">Abhayanth K</span>
         </p>
-        <h1 className="text-6xl max-w-[600px] font-bold mb-8 text-white">
+        <h1 className="text-5xl md:text-6xl max-w-[600px] font-bold mb-8 text-white">
           Building <span className="gradient-text">Scalable</span> Web{" "}
           <span className="gradient-text">Applications</span>
         </h1>
