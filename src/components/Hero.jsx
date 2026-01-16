@@ -21,9 +21,18 @@ const Hero = () => {
           I craft high-performance web solutions with a focus on seamless user
           experiences and robust backend architecture.
         </p>
-        <button className="text-white px-9 py-4 rounded-xl border border-[#727fde8e] bg-[#2200493d] shadow-[0_0_5px_#727fde] hover:bg-primary hover:text-black hover:shadow-[0_0_15px_#727fde] transition duration-300 cursor-pointer">
-          Contact Me
-        </button>
+        <div className="flex gap-4">
+          <button className="text-white px-9 py-4 rounded-xl border border-[#727fde8e] bg-[#2200493d] shadow-[0_0_5px_#727fde] hover:bg-primary hover:text-black hover:shadow-[0_0_15px_#727fde] transition duration-300 cursor-pointer">
+            Contact Me
+          </button>
+          <a
+            href="/resume.pdf"
+            download
+            className="text-white px-9 py-4 rounded-xl border border-[#727fde8e] bg-[#2200493d] shadow-[0_0_5px_#727fde] hover:bg-primary hover:text-black hover:shadow-[0_0_15px_#727fde] transition duration-300 cursor-pointer flex items-center justify-center"
+          >
+            Download Resume
+          </a>
+        </div>
       </div>
 
       <div className="absolute right-[3%] hidden lg:block">
